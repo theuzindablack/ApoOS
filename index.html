@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApoOS — Web Ecosystem</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Área de Trabalho Minimalista -->
+  <main id="desktop">
+    <div class="shortcut" onclick="launchApp('Google', 'google')">
+      <div class="icon">🔍</div>
+      <span>Google</span>
+    </div>
+    
+    <div class="shortcut" onclick="launchApp('Calculadora', 'calculadora')">
+      <div class="icon">🧮</div>
+      <span>Calculadora</span>
+    </div>
+
+    <div class="shortcut" onclick="launchApp('Notas', 'notas')">
+      <div class="icon">📝</div>
+      <span>Notas</span>
+    </div>
+
+    <div class="shortcut" onclick="launchApp('WhatsApp Auto', 'whatsapp-auto')">
+      <div class="icon">⚡</div>
+      <span>Wpp Auto</span>
+    </div>
+  </main>
+
+  <!-- Janela do Sistema -->
+  <div id="window" class="window hidden">
+    <div class="window-header">
+      <span id="window-title">Aplicativo</span>
+      <button class="close-btn" onclick="closeApp()">✕</button>
+    </div>
+    <div class="window-body" id="window-body"></div>
+  </div>
+
+  <!-- Barra de Tarefas -->
+  <footer id="taskbar">
+    <button class="start-btn" onclick="toggleMenu()">⚡ Apo</button>
+    <div class="clock" id="clock">00:00</div>
+  </footer>
+
+  <!-- Scripts do Núcleo -->
+  <script src="core/storage.js"></script>
+  <script src="core/app-loader.js"></script>
+  <script src="core/os-kernel.js"></script>
+</body>
+</html>
