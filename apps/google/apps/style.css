@@ -1,0 +1,6 @@
+.calc-wrapper { display: flex; flex-direction: column; gap: 12px; height: 100%; max-width: 280px; margin: 20px auto; }
+#calc-display { background: #090a0f; color: #38bdf8; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px; font-size: 24px; text-align: right; font-family: monospace; }
+.calc-buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; flex: 1; }
+.calc-buttons button { background: rgba(255,255,255,0.04); color: #fff; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+.calc-buttons button:hover { background: rgba(255,255,255,0.1); }
+.btn-op { color: #38bdf8 !important; }
