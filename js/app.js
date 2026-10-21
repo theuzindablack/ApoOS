@@ -1,4 +1,3 @@
-// Lista de Aplicativos Registrados no apoOs
 const apps = [
     { id: 'files', name: 'Arquivos', icon: '📁', bg: 'bg-amber-500' },
     { id: 'termux', name: 'Termux Web', icon: '💻', bg: 'bg-black border border-slate-700' },
@@ -9,7 +8,6 @@ const apps = [
     { id: 'settings', name: 'Ajustes', icon: '⚙️', bg: 'bg-slate-600' }
 ];
 
-// Renderiza a área de trabalho
 function renderDesktop() {
     const grid = document.getElementById('desktopGrid');
     if (!grid) return;
@@ -23,7 +21,6 @@ function renderDesktop() {
     `).join('');
 }
 
-// Abertura de Aplicativos
 function openApp(appId) {
     const container = document.getElementById('appWindowContainer');
     let content = '';
@@ -68,4 +65,3 @@ function goHome() {
 }
 
 document.addEventListener('DOMContentLoaded', renderDesktop);
-  
