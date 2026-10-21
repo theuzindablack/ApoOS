@@ -1,54 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ApoOS — Web Ecosystem</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>apoOs Pro - Mobile OS</title>
+    <!-- Tailwind CSS & FontAwesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Área de Trabalho Minimalista -->
-  <main id="desktop">
-    <div class="shortcut" onclick="launchApp('Google', 'google')">
-      <div class="icon">🔍</div>
-      <span>Google</span>
-    </div>
-    
-    <div class="shortcut" onclick="launchApp('Calculadora', 'calculadora')">
-      <div class="icon">🧮</div>
-      <span>Calculadora</span>
+    <div class="phone-frame">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span id="clock">00:00</span>
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-signal text-xs"></i>
+                <i class="fa-solid fa-wifi text-xs"></i>
+                <i class="fa-solid fa-battery-full text-sm text-emerald-400"></i>
+            </div>
+        </div>
+
+        <!-- Tela do OS -->
+        <div class="screen">
+            <!-- Widget Principal -->
+            <div class="p-6 pt-8">
+                <div class="bg-slate-800/40 backdrop-blur-md border border-slate-700/50 p-4 rounded-2xl text-white shadow-lg">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2 class="text-2xl font-bold">apoOs Pro</h2>
+                            <p class="text-xs text-slate-400">Sistema Operacional Mobile</p>
+                        </div>
+                        <i class="fa-solid fa-terminal text-3xl text-emerald-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade de Aplicativos -->
+            <div class="app-grid" id="desktopGrid"></div>
+
+            <!-- Container das Janelas (Modais) -->
+            <div id="appWindowContainer"></div>
+        </div>
+
+        <!-- Barra Inferior de Navegação -->
+        <div class="nav-bar">
+            <div class="nav-btn" onclick="goHome()"><i class="fa-solid fa-circle-chevron-left"></i></div>
+            <div class="nav-btn" onclick="goHome()"><i class="fa-solid fa-house"></i></div>
+            <div class="nav-btn" onclick="goHome()"><i class="fa-solid fa-square"></i></div>
+        </div>
     </div>
 
-    <div class="shortcut" onclick="launchApp('Notas', 'notas')">
-      <div class="icon">📝</div>
-      <span>Notas</span>
-    </div>
-
-    <div class="shortcut" onclick="launchApp('WhatsApp Auto', 'whatsapp-auto')">
-      <div class="icon">⚡</div>
-      <span>Wpp Auto</span>
-    </div>
-  </main>
-
-  <!-- Janela do Sistema -->
-  <div id="window" class="window hidden">
-    <div class="window-header">
-      <span id="window-title">Aplicativo</span>
-      <button class="close-btn" onclick="closeApp()">✕</button>
-    </div>
-    <div class="window-body" id="window-body"></div>
-  </div>
-
-  <!-- Barra de Tarefas -->
-  <footer id="taskbar">
-    <button class="start-btn" onclick="toggleMenu()">⚡ Apo</button>
-    <div class="clock" id="clock">00:00</div>
-  </footer>
-
-  <!-- Scripts do Núcleo -->
-  <script src="core/storage.js"></script>
-  <script src="core/app-loader.js"></script>
-  <script src="core/os-kernel.js"></script>
+    <!-- Scripts do Sistema -->
+    <script src="js/statusbar.js"></script>
+    <script src="js/apps/files.js"></script>
+    <script src="js/apps/termux.js"></script>
+    <script src="js/apps/browser.js"></script>
+    <script src="js/apps/calculator.js"></script>
+    <script src="js/apps/notepad.js"></script>
+    <script src="js/apps/store.js"></script>
+    <script src="js/apps/settings.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
