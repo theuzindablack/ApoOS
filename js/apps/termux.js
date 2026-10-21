@@ -46,11 +46,11 @@ function runTermuxCmd(cmd) {
     switch(main) {
         case 'help':
             printTermux(`Comandos disponíveis:`, 'text-yellow-400');
-            printTermux(`  pkg install &lt;pacote&gt; - Instala linguagens`);
+            printTermux(`  pkg install &lt;pacote&gt; - Instala pacotes/linguagens`);
             printTermux(`  pkg list             - Lista pacotes instalados`);
             printTermux(`  python3 -c "&lt;code&gt;" - Executa código Python`);
             printTermux(`  node -e "&lt;code&gt;"    - Executa código JavaScript`);
-            printTermux(`  ls / clear           - Comandos de shell`);
+            printTermux(`  ls / cat / clear     - Comandos de shell`);
             break;
         case 'clear':
             document.getElementById('termuxOutput').innerHTML = '';
@@ -109,4 +109,4 @@ function runTermuxCmd(cmd) {
                 printTermux(`comando não encontrado: ${main}. Digite 'help'.`, 'text-red-400');
             }
     }
-                           }
+}
