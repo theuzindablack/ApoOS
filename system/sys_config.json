@@ -1,0 +1,17 @@
+{
+  "system": {
+    "name": "apoOs Pro",
+    "version": "1.0.0",
+    "developer": "theuzin_da_black",
+    "theme": "dark"
+  },
+  "modules": [
+    "files",
+    "termux",
+    "browser",
+    "calculator",
+    "notepad",
+    "store",
+    "settings"
+  ]
+}
